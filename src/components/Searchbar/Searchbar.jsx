@@ -9,7 +9,9 @@ export class Search extends Component {
   handleSubmit = event => {
     event.preventDefault();
     const { query } = this.state;
-    this.props.onSubmit(query);
+    if (query.trim() !== '') {
+      this.props.onSubmit(query);
+    }
   };
 
   handleChange = event => {
